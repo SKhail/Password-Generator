@@ -88,21 +88,59 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+function generatePassword() {
+
+  //Prompt for password length
+  let passwordLength = parseInt(prompt('Enter password length - between 8 and 128 characters - :'));
+  //check for condition met 
+  if (passwordLength < 8 || passwordLength > 128) {
+    ///Output an error message
+    console.log(" You need your password to be atleast 8 charcters and less than 128 ");
+    return passwordLength;
+  }
+
+  // combining all the characters
+  const combineChar = specialCharacters.concat(numericCharacters, upperCasedCharacters, lowerCasedCharacters);
+
+
+  // I need to create confirmations with each character 
+
+  let password = '';
+  for (let i = 0; i < passwordLength.length; i++) {
+    // Join together to enable the randomise happen with all characters
+    let randomChar = getRandom(combineChar);
+    password += randomChar;
+
+  }
+
+  return password;
+
+}
+
+// Function so i can call it when it is needed
+function getRandom(arr) {
+  const randomize = Math.floor(Math.random() * arr.length);
+  // arr[randomize];
+  return arr[randomize];
+}
+
+generatePassword();
+
+// let generatedPassword = generatePassword();
+// console.log(generatePassword);
+
+
+
+
+
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-}
 
-// Function for getting a random element from an array
-function getRandom(arr) {
 
 }
-
-// Function to generate password with user input
-function generatePassword() {
-
-}
-
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
