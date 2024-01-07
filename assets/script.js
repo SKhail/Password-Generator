@@ -88,22 +88,28 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// Function so i can call it when it is needed
+function getRandom(arr) {
+  const randomize = Math.floor(Math.random() * arr.length);
+  return arr[randomize];
+}
+
+
+
+
 function generatePassword() {
 
   //Prompt for password length
   let passwordLength = parseInt(prompt('Enter password length - between 8 and 128 characters - :'));
   //check for condition met 
-  if (passwordLength < 8 || passwordLength > 128) {
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     ///Output an error message
-    console.log(" You need your password to be atleast 8 charcters and less than 128 ");
-    return passwordLength;
+    console.error(" You need your password to be atleast 8 charcters and less than 128 ");
+    // return;  // stops the execution going further
   }
 
   // combining all the characters
   const combineChar = specialCharacters.concat(numericCharacters, upperCasedCharacters, lowerCasedCharacters);
-
-
-  // I need to create confirmations with each character 
 
   let password = '';
   for (let i = 0; i < passwordLength.length; i++) {
@@ -112,24 +118,27 @@ function generatePassword() {
     password += randomChar;
 
   }
+  let hasCharacterType = false;
+  for (const char of password) {
+    if (specialCharacters.includes(char) || numericCharacters.includes(char) || upperCasedCharacters.includes(char) || lowerCasedCharacters.include(char)) {
+      hasCharacterType = true;
+      break
+    }
+  }
 
+  //display error if this doesn't meet the requirements
+  if (!hasCharacterType) {
+    console.error("The password needs to include atleast 1 special character, 1 number , 1 lowercase and 1 capital letter");
+    return;
+  }
+
+  // if the password meets the criteria
   return password;
-
 }
 
-// Function so i can call it when it is needed
-function getRandom(arr) {
-  const randomize = Math.floor(Math.random() * arr.length);
-  // arr[randomize];
-  return arr[randomize];
-}
+
 
 generatePassword();
-
-// let generatedPassword = generatePassword();
-// console.log(generatePassword);
-
-
 
 
 
@@ -139,8 +148,9 @@ generatePassword();
 function getPasswordOptions() {
 
 
-
 }
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
