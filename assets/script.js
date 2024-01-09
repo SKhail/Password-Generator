@@ -33,16 +33,16 @@ function generatePassword() {
   var generatePassword = '';
 
   //for the user to confirm they need before the password is generated
-  var includeLowercase = confirm("You will need a minmum of 1 Lowercase, please press Ok to confirm");
-  var includeUppercase = confirm("You will need a minmum of 1 Uppercase, please press Ok to confirm");
-  var includeNumbers = confirm("You will need a minmum of 1 Number, please press Ok to confirm");
-  var includeSpecial = confirm("You will need a minmum of 1 Special character, please press Ok to confirm");
+  var includeLowercase = confirm("You will need a minimum of 1 Lowercase, please press Ok to confirm");
+  var includeUppercase = confirm("You will need a minimum of 1 Uppercase, please press Ok to confirm");
+  var includeNumbers = confirm("You will need a minimum of 1 Number, please press Ok to confirm");
+  var includeSpecial = confirm("You will need a minimum of 1 Special character, please press Ok to confirm");
 
 
   var passwordLength = parseInt(prompt('Please enter password length between 8 and 128 characters :'));
 
   // The user has to be under 8 and not over 128 characters for the password
-  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+  if (passwordLength < 8 || passwordLength > 128) {
     return alert("Your password must be between 8 and 128 characters.");
 
   }
@@ -50,28 +50,13 @@ function generatePassword() {
   //If this doesn't include rscha
   if (!(includeLowercase || includeUppercase || includeNumbers || includeSpecial)) {
     return alert("You must choose at least one password for each section");
-   
+
   }
-
-  // if (includeLowercase) {
-  //   allChars += lowerCasedCharacters;
-  // }
-
-  // if (includeUppercase) {
-  //   allChars += upperCasedCharacters;
-  // }
-
-  // if (includeNumbers) {
-  //   allChars += numericCharacters;
-  // }
-
-  // if (includeSpecial) {
-  //   allChars += specialCharacters;
-  // }
 
   // This will be Concatenating each type of character
   if (includeLowercase) {
     allChars += lowerCasedCharacters.join(''); 
+    
   }
   if (includeUppercase) {
     allChars += upperCasedCharacters.join(''); 
