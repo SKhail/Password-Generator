@@ -17,7 +17,7 @@ Generate a password when the button is clicked
 - Code should validate for each input and at least one character type should be selected
 - Once prompts are answered then the password should be generated and displayed in an alert or written to the page
 
-added a extra feature to give the user the option to select dark/light mode.
+Added a extra feature to give the user the option to select dark/light mode.
 
 ## Installation
 
@@ -47,7 +47,7 @@ N/A
 
 ## License
 
-This project is licened under the MIT License.
+This project is licenced under the MIT License.
 
 ## Badges
 
