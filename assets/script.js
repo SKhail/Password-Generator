@@ -28,7 +28,7 @@ toggle.addEventListener('input', e => {
 });
 
 function generatePassword() {
-  
+
   var allChars = '';
   var generatePassword = '';
 
@@ -55,14 +55,14 @@ function generatePassword() {
 
   // This will be Concatenating each type of character
   if (includeLowercase) {
-    allChars += lowerCasedCharacters.join(''); 
-    
+    allChars += lowerCasedCharacters.join('');
+
   }
   if (includeUppercase) {
-    allChars += upperCasedCharacters.join(''); 
+    allChars += upperCasedCharacters.join('');
   }
   if (includeNumbers) {
-    allChars += numericCharacters.join(''); 
+    allChars += numericCharacters.join('');
   }
   if (includeSpecial) {
     allChars += specialCharacters.join('');
@@ -100,79 +100,6 @@ generateBtn.addEventListener('click', writePassword);
 
 
 
-
-
-//   // User requires to enter at least 1 of each character
-//   const includeLowercase = window.prompt('Please include at least 1 lowercase');
-
-
-//   const includeUppercase = window.prompt('Please include at least 1 uppercase');
-//   const includeNumbers = window.prompt('Please include at least 1 number');
-//   const includeSymbols = window.prompt('Please include at least 1 symbol');
-
-//   
-
-// let allChars = '';
-
-  
-
-//   let password = '';
-//   for (let i = 0; i < length; i++) {
-//     password += getRandom(allChars);
-//   }
-
-//   return password;
-// }
-
-
-
-//   // let password = '';
-//   let passwordLength = parseInt(prompt('Enter password length - between 8 and 128 characters - :'));
-
-
-
-//   let specialChar = false;
-//   let numericChar = false;
-//   let lowercaseChar = false;
-//   let uppercaseChar = false;
-
-//   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-//     alert("You need your password to be at least 8 characters and less than 128.");
-//     return '';
-//   }
-
-//   for (let attempts = 0; attempts < 50; attempts++) {
-//     password = '';
-
-//     for (let i = 0; i < passwordLength; i++) {
-//       let randomChar = getRandom(allCharacters);
-//       password += randomChar;
-
-//       if (specialCharacters.includes(randomChar)) {
-//         specialChar = true;
-//       } else if (numericCharacters.includes(randomChar)) {
-//         numericChar = true;
-//       } else if (lowerCasedCharacters.includes(randomChar)) {
-//         lowercaseChar = true;
-//       } else if (upperCasedCharacters.includes(randomChar)) {
-//         uppercaseChar = true;
-//       }
-//     }
-
-//     if (specialChar && numericChar && lowercaseChar && uppercaseChar) {
-//       alert("Generated Password: " + password);
-//       return password;
-//     }
-//   }
-
-//   alert('Failed to generate a password. Please try again.');
-//   return password;
-// }
-
-// function getRandom(arr) {
-//   const randomize = Math.floor(Math.random() * arr.length);
-//   return arr[randomize];
-// }
 
 
 
