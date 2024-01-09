@@ -27,15 +27,18 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(360, 91%, 36%);
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(360, 91%, 36%);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -43,7 +46,7 @@ header {
 }
 
 .card-header::after {
-  content: " ";
+  content: ' ';
   display: block;
   width: 100%;
   background: #e7e9eb;
@@ -59,7 +62,7 @@ header {
 }
 
 .card-footer::before {
-  content: " ";
+  content: ' ';
   display: block;
   width: 100%;
   background: #e7e9eb;
@@ -67,7 +70,7 @@ header {
 }
 
 .card-footer::after {
-  content: " ";
+  content: ' ';
   display: block;
   clear: both;
 }
@@ -76,8 +79,7 @@ header {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
@@ -95,6 +97,56 @@ button[disabled] {
 
 .float-right {
   float: right;
+}
+
+/* toggle dark/light mode */
+.toggle input[type='checkbox'] {
+  display: none;
+}
+
+.toggle label {
+  display: inline-block;
+  width: 85px;
+  height: 50px;
+  position: relative;
+  bottom: 31rem;
+  margin-left: 95rem;
+  background-color: #000000;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+.toggle label::after {
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  transition: all ease-in-out 0.3s;
+  border-radius: 45px;
+}
+
+.toggle input[type='checkbox']:checked ~ label {
+  background-color: hsl(360, 91%, 36%);
+  border-color: #000000;
+}
+
+.toggle input[type='checkbox']:checked ~ label::after {
+  background-color: #000000;
+  transform: translateX(50px);
+}
+
+body {
+  background-color: #f5f7fa;
+}
+
+body.dark-theme {
+  background-color: #000000;
 }
 
 #password {
@@ -125,6 +177,11 @@ button[disabled] {
     padding: 10px 15px;
   }
 
+  .toggle label {
+    margin-left: 34rem;
+    margin-top: 20px;
+  }
+
   #password {
     font-size: 1rem;
   }
@@ -133,5 +190,10 @@ button[disabled] {
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+  .toggle label {
+    margin: -1rem;
+    margin-top: 20px;
+    width: 75px;
   }
 }
