@@ -22,7 +22,7 @@ Added a extra feature to give the user the option to select dark/light mode.
 ## Installation
 
 1.  Clone the repository to your local machine using:
-    git clone git@github.com:SKhail/Password-Generator.git
+    git clone https://github.com/SKhail/Password-Generator.git
     cd Password-Generator
 2.  Once cloned, you can start the application
 3.  You will have it in your local machines and can start the Application.
@@ -30,7 +30,7 @@ Added a extra feature to give the user the option to select dark/light mode.
 ## Usage
 
 1.  Clone the repository to your local machine using:
-    git clone git@github.com:SKhail/Password-Generator.git
+    git clone https://github.com/SKhail/Password-Generator.git
     cd Password-Generator
 2.  Once cloned, you can start the application
 3.  You will have it in your local machines and can start the Application.
